@@ -75,7 +75,7 @@ async function getStreamUrl(videoId) {
   console.log('Getting fresh stream URL for:', videoId);
   
   // Updated command with better options to avoid rate limiting
-  const command = `yt-dlp -f "bestaudio/best" --cookies youtube_cookies.txt --no-check-certificates --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" --extractor-args "youtube:player_client=android" --get-url "${url}"`;
+  const command = `yt-dlp -f "bestaudio/best" --get-url "${url}"`;
   
   try {
     const { stdout, stderr } = await execPromise(command, {
